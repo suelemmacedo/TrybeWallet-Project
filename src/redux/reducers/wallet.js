@@ -1,30 +1,22 @@
-// Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
-import { USER_WALLET } from '../actions';
+import { RESPONSE_COINS } from '../actions';
 
 const initialState = {
-  wallet: {
-    currencies: [], // array de string
-    expenses: [], // array de objetos, com cada objeto tendo as chaves id, value, currency, method, tag, description e exchangeRates
-    editor: false, // valor booleano que indica de uma despesa está sendo editada
-    idToEdit: 0, // valor numérico que armazena o id da despesa que esta sendo editada
-  },
+  currencies: [], // array de string
+  expenses: [], // array de objetos, com cada objeto tendo as chaves id, value, currency, method, tag, description e exchangeRates
+  editor: false, // valor booleano que indica de uma despesa está sendo editada
+  idToEdit: 0, // valor numérico que armazena o id da despesa que esta sendo editada
 };
 
-const walletReducer = (state = initialState, action) => {
+const wallet = (state = initialState, action) => {
   switch (action.type) {
-  case USER_WALLET:
+  case RESPONSE_COINS:
     return {
       ...state,
-      wallet: {
-        currencies: action.state.currencies,
-        expenses: action.state.expenses,
-        editor: action.state.editor,
-        idToEdit: action.state.idToEdit,
-      },
+      currencies: Object.keys(action.payload).filter((event) => event !== 'USDT'),
     };
   default:
     return state;
   }
 };
 
-export default walletReducer;
+export default wallet;
