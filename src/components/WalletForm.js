@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { requestCoins, responseExpensive } from '../redux/actions';
 
 const initialState = {
-  id: 0,
+  /* id: 0, */
   value: '',
   currency: 'USD',
   method: 'Dinheiro',
@@ -30,8 +30,14 @@ class WalletForm extends Component {
 
   handleClick = async (event) => {
     event.preventDefault();
-    const { dispatch } = this.props;
-    dispatch(responseExpensive(this.state));
+    const { dispatch, expenses } = this.props;
+    /* console.log(expenses.length); */
+    const idState = {
+      id: expenses.length,
+      ...this.state,
+    };
+    console.log(idState);
+    dispatch(responseExpensive(idState));
     this.setState(
       initialState,
     );
@@ -93,7 +99,7 @@ class WalletForm extends Component {
           onChange={ this.handleChange }
         >
           <option value="Alimentacao">Alimentação</option>
-          <option value="Lazer">lazer</option>
+          <option value="Lazer">Lazer</option>
           <option value="Trabalho">Trabalho</option>
           <option value="Transporte">Transporte</option>
           <option value="Saúde">Saúde</option>
@@ -111,6 +117,7 @@ class WalletForm extends Component {
 
 WalletForm.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  expenses: PropTypes.arrayOf(PropTypes.string).isRequired,
   coins: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 

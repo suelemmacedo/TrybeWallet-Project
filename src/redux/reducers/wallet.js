@@ -21,7 +21,6 @@ const wallet = (state = initialState, action) => {
         ...state.expenses,
         action.expensive,
       ],
-      idToEdit: state.idToEdit + 1,
     };
   default:
     return state;
