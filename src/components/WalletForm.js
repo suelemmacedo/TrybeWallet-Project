@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { requestCoins } from '../redux/actions';
+import { requestCoins, responseExpensive } from '../redux/actions';
 
 const initialState = {
+  id: 0,
   value: '',
-  currency: '',
-  method: '',
-  category: '',
-  tag: '',
+  currency: 'USD',
+  method: 'Dinheiro',
+  tag: 'Alimentação',
+  description: '',
+  exchangeRates: [],
 };
 
 class WalletForm extends Component {
@@ -26,9 +28,17 @@ class WalletForm extends Component {
     });
   };
 
+  handleClick = async (event) => {
+    event.preventDefault();
+    const { dispatch } = this.props;
+    dispatch(responseExpensive(this.state));
+    this.setState(
+      initialState,
+    );
+  };
+
   render() {
     const { coins } = this.props;
-    console.log(this.props);
     const { value, currency, method, tag,
       description } = this.state;
     return (
@@ -88,6 +98,12 @@ class WalletForm extends Component {
           <option value="transporte">Transporte</option>
           <option value="saude">Saúde</option>
         </select>
+        <button
+          type="submit"
+          onClick={ this.handleClick }
+        >
+          Adicionar despesa
+        </button>
       </form>
     );
   }
@@ -100,6 +116,7 @@ WalletForm.propTypes = {
 
 const mapStateToProps = (store) => ({
   coins: store.wallet.currencies,
+  expenses: store.wallet.expenses,
 });
 
 export default connect(mapStateToProps)(WalletForm);

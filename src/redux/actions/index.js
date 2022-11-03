@@ -1,11 +1,12 @@
 import charApi from '../../services/charApi';
-
 // Actions Types
-
 export const USER_EMAIL = 'USER_EMAIL';
 export const REQUEST = 'REQUEST';
 export const RESPONSE_COINS = 'RESPONSE_COINS';
 export const RESPONSE_ERROR = 'RESPONSE_ERROR';
+export const REQUEST_ADD = 'REQUEST_ADD';
+export const RESPONSE_SUCESS = 'RESPONSE_SUCESS';
+export const EXPENSE_ERROR = 'EXPENSE_ERROR';
 
 export const user = (email) => ({
   type: USER_EMAIL,
@@ -26,6 +27,20 @@ export const responseError = (error) => ({
   error,
 });
 
+export const requestAdd = () => ({
+  type: REQUEST_ADD,
+});
+
+export const responseSucess = (expensive) => ({
+  type: RESPONSE_SUCESS,
+  expensive,
+});
+
+export const expensesError = (error) => ({
+  type: EXPENSE_ERROR,
+  error,
+});
+
 export function requestCoins() {
   return async (dispatch) => {
     dispatch(request());
@@ -34,6 +49,24 @@ export function requestCoins() {
       dispatch(responseCoins(dataCoins));
     } catch (error) {
       dispatch(responseError(error));
+    }
+  };
+}
+
+export function responseExpensive(expenses) {
+  return async (dispatch) => {
+    try {
+      dispatch(requestAdd());
+      const data = await charApi();
+      const newExpenses = {
+        ...expenses,
+        exchangeRates: data,
+      };
+      console.log(newExpenses);
+      dispatch(responseSucess(newExpenses));
+    } catch (error) {
+      /* console.log(error); */
+      dispatch(expensesError(error));
     }
   };
 }
