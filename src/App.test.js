@@ -1,7 +1,6 @@
 import React from 'react';
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { act } from 'react-dom/test-utils';
 import { renderWithRouterAndRedux } from './tests/helpers/renderWith';
 import App from './App';
 import Wallet from './pages/Wallet';
