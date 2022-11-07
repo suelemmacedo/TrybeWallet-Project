@@ -1,4 +1,4 @@
-import { RESPONSE_COINS, RESPONSE_SUCESS } from '../actions';
+import { RESPONSE_COINS, RESPONSE_SUCESS, DELETE_EXPENSE } from '../actions';
 
 const initialState = {
   currencies: [],
@@ -21,6 +21,12 @@ const wallet = (state = initialState, action) => {
         ...state.expenses,
         action.expensive,
       ],
+    };
+  case DELETE_EXPENSE:
+    return {
+      ...state,
+      expenses: state.expenses.filter((element) => element.id
+      !== action.deleteExpenses),
     };
   default:
     return state;

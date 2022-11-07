@@ -83,4 +83,36 @@ describe('Testa a Page Wallet', () => {
     const submit = screen.getByText('Adicionar despesa');
     expect(submit).toBeInTheDocument();
   });
+  test('2. Testa o funcionamento da table', () => {
+    renderWithRouterAndRedux(<Wallet />);
+    const value = screen.getByTestId('value-input');
+    expect(value).toBeInTheDocument();
+
+    const description = screen.getByTestId('description-input');
+    expect(description).toBeInTheDocument();
+
+    const currency = screen.getByTestId('currency-input');
+    expect(currency).toBeInTheDocument();
+
+    const method = screen.getByTestId('method-input');
+    expect(method).toBeInTheDocument();
+
+    const tag = screen.getByTestId('tag-input');
+    expect(tag).toBeInTheDocument();
+
+    const submit = screen.getByText('Adicionar despesa');
+    expect(submit).toBeInTheDocument();
+
+    const table = screen.getByRole('table');
+    expect(table).toBeInTheDocument();
+
+    userEvent.type(description, 'Suco');
+    userEvent.type(value, '15,00');
+    userEvent.type(method, 'Dinheiro');
+    userEvent.type(tag, 'Alimentação');
+
+    const addExpense = screen.getByRole('button', { name: /adicionar despesa/i });
+    userEvent.click(addExpense);
+    expect(table).toBeVisible();
+  });
 });

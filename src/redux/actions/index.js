@@ -7,6 +7,7 @@ export const RESPONSE_ERROR = 'RESPONSE_ERROR';
 export const REQUEST_ADD = 'REQUEST_ADD';
 export const RESPONSE_SUCESS = 'RESPONSE_SUCESS';
 export const EXPENSE_ERROR = 'EXPENSE_ERROR';
+export const DELETE_EXPENSE = 'DELETE_EXPENSE';
 
 export const user = (email) => ({
   type: USER_EMAIL,
@@ -39,6 +40,11 @@ export const responseSucess = (expensive) => ({
 export const expensesError = (error) => ({
   type: EXPENSE_ERROR,
   error,
+});
+
+export const deleteExpenseBtn = (deleteExpenses) => ({
+  type: DELETE_EXPENSE,
+  deleteExpenses,
 });
 
 export function requestCoins() {
