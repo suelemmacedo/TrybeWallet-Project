@@ -1,4 +1,5 @@
-import { RESPONSE_COINS, RESPONSE_SUCESS, DELETE_EXPENSE } from '../actions';
+import { RESPONSE_COINS, RESPONSE_SUCESS, DELETE_EXPENSE,
+  EDIT_EXPENSE, EDIT_EXPENSE_SUCESS } from '../actions';
 
 const initialState = {
   currencies: [],
@@ -27,6 +28,18 @@ const wallet = (state = initialState, action) => {
       ...state,
       expenses: state.expenses.filter((element) => element.id
       !== action.deleteExpenses),
+    };
+  case EDIT_EXPENSE:
+    return {
+      ...state,
+      editor: true,
+      idToEdit: action.idExpense,
+    };
+  case EDIT_EXPENSE_SUCESS:
+    return {
+      ...state,
+      editor: false,
+      expenses: action.editExp,
     };
   default:
     return state;

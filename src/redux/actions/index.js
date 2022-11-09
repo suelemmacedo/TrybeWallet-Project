@@ -8,6 +8,8 @@ export const REQUEST_ADD = 'REQUEST_ADD';
 export const RESPONSE_SUCESS = 'RESPONSE_SUCESS';
 export const EXPENSE_ERROR = 'EXPENSE_ERROR';
 export const DELETE_EXPENSE = 'DELETE_EXPENSE';
+export const EDIT_EXPENSE = 'EDIT_EXPENSE';
+export const EDIT_EXPENSE_SUCESS = 'EDIT_EXPENSE_SUCESS';
 
 export const user = (email) => ({
   type: USER_EMAIL,
@@ -45,6 +47,16 @@ export const expensesError = (error) => ({
 export const deleteExpenseBtn = (deleteExpenses) => ({
   type: DELETE_EXPENSE,
   deleteExpenses,
+});
+
+export const editExpense = (idExpense) => ({
+  type: EDIT_EXPENSE,
+  idExpense,
+});
+
+export const editExpenseSucess = (editExp) => ({
+  type: EDIT_EXPENSE_SUCESS,
+  editExp,
 });
 
 export function requestCoins() {
