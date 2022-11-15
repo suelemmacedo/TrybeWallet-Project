@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { requestCoins, responseExpensive, editExpenseSucess } from '../redux/actions';
+import '../styles/WalletForm.css';
 
 const initialState = {
   /* id: 0, */
@@ -68,10 +69,11 @@ class WalletForm extends Component {
     const { value, currency, method, tag,
       description } = this.state;
     return (
-      <form>
+      <form className="form-wallet">
         <label htmlFor="inputValue">
-          Valor:
+          {/*  Valor: */}
           <input
+            className="input-value"
             type="text"
             name="value"
             data-testid="value-input"
@@ -81,8 +83,9 @@ class WalletForm extends Component {
           />
         </label>
         <label htmlFor="inputDescription">
-          Descrição:
+          {/* Descrição: */}
           <input
+            className="input"
             type="text"
             name="description"
             data-testid="description-input"
@@ -92,6 +95,7 @@ class WalletForm extends Component {
           />
         </label>
         <select
+          className="select-currency"
           data-testid="currency-input"
           name="currency"
           value={ currency }
@@ -103,6 +107,7 @@ class WalletForm extends Component {
             </option>))}
         </select>
         <select
+          className="select-method"
           data-testid="method-input"
           name="method"
           value={ method }
@@ -113,6 +118,7 @@ class WalletForm extends Component {
           <option value="Cartão de débito">Cartão de débito</option>
         </select>
         <select
+          className="select"
           data-testid="tag-input"
           name="tag"
           value={ tag }
@@ -136,6 +142,7 @@ class WalletForm extends Component {
               </button>)
             : (
               <button
+                className="add-expense"
                 type="button"
                 onClick={ this.handleClick }
               >

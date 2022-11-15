@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { deleteExpenseBtn, editExpense } from '../redux/actions';
+import '../styles/Table.css';
 
 class Table extends Component {
   deleteButton = (deleteExpenses) => {
@@ -52,6 +53,7 @@ class Table extends Component {
                 <td>Real</td>
                 <td>
                   <button
+                    className="edit-btn"
                     type="button"
                     data-testid="edit-btn"
                     id={ element.id }
@@ -61,6 +63,7 @@ class Table extends Component {
 
                   </button>
                   <button
+                    className="delete-btn"
                     type="button"
                     data-testid="delete-btn"
                     onClick={ () => this.deleteButton(element.id) }

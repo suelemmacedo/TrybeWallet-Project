@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:wght@200&display=swap') ;
+
+body {
+  background-image: url('https://cdn.uplanner.com.br/wp-content/uploads/2022/05/Imagens-artigos-5.png.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Montserrat, sans-serif;
+  font-size: 15px;
+  padding-left: 1em;
+}
+
+.input-email {
+  background: white;
+  border: 1px solid #003be5;
+  border-radius: 5px;
+  box-sizing: border-box;
+  height: 40px;
+  left: 475px;
+  position: absolute;
+  top: 260px;
+  width: 330px;
+}
+
+.input-password {
+  background: white;
+  border: 1px solid #003be5;
+  border-radius: 5px;
+  box-sizing: border-box;
+  height: 40px;
+  left: 475px;
+  position: absolute;
+  top: 310px;
+  width: 330px;
+}
+
+.input-button {
+  background: #a5b5e6;
+  border: 1px solid #141417;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: #141417;
+
+  /* stylelint-disable-next-line font-weight-notation */
+  font-weight: bold;
+  height: 40px;
+  left: 475px;
+  position: absolute;
+  top: 355px;
+  width: 330px;
+
+}
+
+.trybe-wallet {
+  color: #003be5;
+  font-size: xx-large;
+
+  /* stylelint-disable-next-line font-weight-notation */
+  font-weight: bold;
+  height: 26.76px;
+  left: 535px;
+  position: absolute;
+  top: 150px;
+  width: 112.15px;
+}

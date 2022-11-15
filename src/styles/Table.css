@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:wght@200&display=swap') ;
+
+table {
+  background-color: rgb(165, 207, 220);
+  margin: auto;
+  position: relative;
+  width: 95vw;
+}
+
+table , th , td {
+  border: 1px solid rgb(169, 209, 244);
+  font-size: 15px;
+}
+
+th , td {
+  text-align: center;
+}
+
+tr:nth-child( odd ) {
+  background-color: #a5b5e6;
+  color: rgb(42, 42, 42);
+  font-size: 0.7em;
+}
+
+tr:nth-child( even ) {
+  background-color: #8197d6;
+  color: rgb(42, 42, 42);
+  font-size: 0.7em;
+}
+
+.delete-btn {
+  background-color: #a5b5e6;
+  border-radius: 10%;
+  cursor: pointer;
+  font-size: 0.7em;
+
+  /* stylelint-disable-next-line font-weight-notation */
+  font-weight: bold;
+  margin: 1.5px;
+  transition: 0.1s;
+}
+
+.edit-btn {
+  background-color: #a5b5e6;
+  border-radius: 10%;
+  cursor: pointer;
+  font-size: 0.7em;
+
+  /* stylelint-disable-next-line font-weight-notation */
+  font-weight: bold;
+  margin: 1.5px;
+  transition: 0.1s;
+}
+
+.delete-btn:hover {
+  background-color: #d3100c;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #2dd30c;
+  color: white;
+}

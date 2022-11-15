@@ -1,0 +1,51 @@
+.email {
+  align-items: center;
+  color: #2fc18c;
+  display: flex;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  height: 14px;
+  left: 931px;
+  line-height: 14px;
+  position: absolute;
+  top: 88px;
+  width: 123px;
+}
+
+.despesaTotal {
+  color: #003be5;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  height: 14px;
+  left: 592px;
+  line-height: 14px;
+  position: absolute;
+  top: 88px;
+  width: 233px;
+}
+
+.despesaBRL {
+  color: #003be5;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  height: 14px;
+  left: 650px;
+  line-height: 14px;
+  position: absolute;
+  top: 88px;
+  width: 233px;
+}
+
+.trybeWallet {
+  background-color: hwb(90 88% 11%);
+  color: rgb(0, 3, 9);
+
+  /* stylelint-disable-next-line font-weight-notation */
+  font-weight: bold;
+  opacity: 12%;
+
+
+}

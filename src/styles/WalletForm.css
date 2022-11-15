@@ -1,0 +1,71 @@
+.form-wallet {
+  border-radius: 0;
+  height: 134px;
+  left: 60px;
+  position: relative;
+  top: 80px;
+  width: 1037px;
+}
+
+
+.add-expense {
+  background: #2fc18c;
+  border: 1px solid #2fc18c;
+  border-radius: 5px;
+  box-sizing: border-box;
+
+  /* stylelint-disable-next-line font-weight-notation */
+  font-weight: bold;
+  height: 30px;
+  left: 950px;
+  position: absolute;
+  width: 150px;
+}
+
+.input {
+  border: 1px solid #003be5;
+  border-radius: 5px;
+  box-sizing: border-box;
+  height: 30px;
+  left: 205px;
+  position: absolute;
+  width: 288.86px;
+}
+
+.input-value {
+  border: 1px solid #003be5;
+  border-radius: 5px;
+  box-sizing: border-box;
+  height: 30px;
+  left: 5px;
+  position: absolute;
+  width: 185px;
+}
+
+.select {
+  border: 1px solid #003be5;
+  border-radius: 5px;
+  box-sizing: border-box;
+  height: 30px;
+  left: 780px;
+  position: absolute;
+  width: 155px;
+}
+
+.select-method {
+  border: 1px solid #003be5;
+  border-radius: 5px;
+  height: 30px;
+  left: 59%;
+  position: absolute;
+  width: 155px;
+}
+
+.select-currency {
+  border: 1px solid #003be5;
+  border-radius: 5px;
+  height: 30px;
+  left: 49%;
+  position: absolute;
+  width: 90px;
+}
