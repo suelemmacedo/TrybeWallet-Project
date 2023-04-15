@@ -27,7 +27,7 @@
 
 <img src="https://img.shields.io/static/v1?label=Link&message=Trybe Wallet&color=purple&style=for-the-badge&logo=github"/>
 
-### <b> <a href="https://suelemmacedo.github.io/Shopping-Cart-Project/">Trybe Wallet</a> </b> <br>
+### <b> <a href="https://trybe-wallet-project-b4vsh26gx-suelemmacedo.vercel.app/">Trybe Wallet</a> </b> <br>
 
 </div>
 
